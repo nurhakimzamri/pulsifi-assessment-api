@@ -5,7 +5,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">NestJS Boilerplate project built using NestJS.<br/>NestJS A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p> <p align="center"> <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a> <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+  <p align="center">Pulsifi Assessment API built using NestJS.<br/>NestJS A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p> <p align="center"> <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a> <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
 <a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
 <a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
@@ -20,14 +20,11 @@
 
 ## Description
 
-NestJS Boilerplate microservice code repository.
-This project uses several checking when committing to Gitlab.
+This project implements a search-flight API endpoint using the SkyScanner API from RapidAPI. It is built with NestJS and provides the following functionalities:
 
-- ESLint
-- Prettier
-- Commitlint
-
-if your commit failing check all of the above linter.
+- Search for roundtrip flight information based on user-specified date ranges.
+- Sort results from cheapest to most expensive.
+- Return the result as JSON.
 
 ### available commit type
 
@@ -49,6 +46,15 @@ if your commit failing check all of the above linter.
 $ npm install
 ```
 
+## Set up environment variables: Create a .env file in the root directory (also shared in email)
+
+```bash
+$ PORT=3000
+$ RAPID_API_URL=https://sky-scanner3.p.rapidapi.com
+$ RAPID_API_KEY=your_rapidapi_key
+$ JWT_SECRET=your_jwt_secret
+```
+
 ## Running the app
 
 ```bash
@@ -61,6 +67,9 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+The API will run on http://localhost:3000.
+Swagger: http://localhost:3000/pulsifi-assessment/api#/
 
 ## Test
 

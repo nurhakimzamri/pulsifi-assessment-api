@@ -8,7 +8,7 @@ export class AppController {
   constructor(
     private readonly appService: AppService,
     private readonly winstonLoggerService: WinstonLoggerService,
-  ) { }
+  ) {}
 
   @Get()
   getHello(): string {
