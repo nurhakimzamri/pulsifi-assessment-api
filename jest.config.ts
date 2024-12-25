@@ -41,7 +41,9 @@ export default {
         "src/app.controller.ts",
         "src/app.service.ts",
         "src/keycloak/keycloak.service.ts",
-        "src/mikro-orm.config.ts"
+        "src/mikro-orm.config.ts",
+        "cron.ts",
+        ".interface.ts",
     ],
     "moduleDirectories": [
         "node_modules", "src"
