@@ -1,7 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { lastValueFrom, map } from 'rxjs';
 import { HttpService } from '@nestjs/axios';
-import { Agent } from 'https';
 import { GetRoundtripFlightsDto } from './dtos/flight.dto';
 import { IRoundtripFlightResponse } from './interfaces/flight.interface';
 
@@ -41,9 +40,6 @@ export class FlightService {
           headers: {
             'x-rapidapi-key': process.env.RAPID_API_KEY,
           },
-          httpsAgent: new Agent({
-            rejectUnauthorized: false,
-          }),
         })
         .pipe(map((response) => response.data)),
     );
